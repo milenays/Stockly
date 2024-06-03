@@ -1,38 +1,24 @@
+// webpack.config.js
+
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-  },
   resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+    },
     fallback: {
       "path": require.resolve("path-browserify"),
-      "stream": require.resolve("stream-browserify"),
-      "constants": require.resolve("constants-browserify"),
       "fs": false,
       "child_process": false,
-      "http": false,
-      "https": false,
-      "os": false,
-      "url": false,
-      "zlib": false,
-      "buffer": false,
-      "process": false,
+      "crypto": false,
       "net": false,
-      "readline": false,
+      "tls": false,
+      "zlib": false,
+      "stream": require.resolve("stream-browserify"),
+      "http": require.resolve("stream-http"),
+      "https": require.resolve("https-browserify"),
+      "os": require.resolve("os-browserify/browser"),
     },
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-    ],
   },
 };

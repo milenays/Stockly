@@ -1,6 +1,7 @@
+// Sidebar.js
 import React from 'react';
 import { HomeIcon, ShoppingCartIcon, UsersIcon, ChartBarIcon, CogIcon } from '@heroicons/react/outline';
-import { Card, CardContent, CardHeader } from '@shadcn/ui';
+import { Card, CardContent, CardHeader } from '@radix-ui/react-icons';
 
 const Sidebar = () => {
   return (
