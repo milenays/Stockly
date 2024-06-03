@@ -1,5 +1,6 @@
 import React from 'react';
 import { HomeIcon, ShoppingCartIcon, UsersIcon, ChartBarIcon, CogIcon } from '@heroicons/react/outline';
+import { Card, CardContent, CardHeader } from '@shadcn/ui';
 
 const Sidebar = () => {
   return (
@@ -11,31 +12,31 @@ const Sidebar = () => {
         <ul>
           <li className="mb-4">
             <a href="/" className="flex items-center text-white">
-              <HomeIcon className="h-6 w-6 mr-2" />
+              <HomeIcon style={{ height: '1.5rem', width: '1.5rem' }} className="mr-2" />
               Dashboard
             </a>
           </li>
           <li className="mb-4">
             <a href="/orders" className="flex items-center text-white">
-              <ShoppingCartIcon className="h-6 w-6 mr-2" />
+              <ShoppingCartIcon style={{ height: '1.5rem', width: '1.5rem' }} className="mr-2" />
               Orders
             </a>
           </li>
           <li className="mb-4">
             <a href="/products" className="flex items-center text-white">
-              <ChartBarIcon className="h-6 w-6 mr-2" />
+              <ChartBarIcon style={{ height: '1.5rem', width: '1.5rem' }} className="mr-2" />
               Products
             </a>
           </li>
           <li className="mb-4">
             <a href="/customers" className="flex items-center text-white">
-              <UsersIcon className="h-6 w-6 mr-2" />
+              <UsersIcon style={{ height: '1.5rem', width: '1.5rem' }} className="mr-2" />
               Customers
             </a>
           </li>
           <li>
             <a href="/settings" className="flex items-center text-white">
-              <CogIcon className="h-6 w-6 mr-2" />
+              <CogIcon style={{ height: '1.5rem', width: '1.5rem' }} className="mr-2" />
               Settings
             </a>
           </li>
