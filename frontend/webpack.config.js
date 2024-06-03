@@ -1,20 +1,28 @@
 const path = require('path');
 
 module.exports = {
-  resolve: {
-    fallback: {
-      "assert": require.resolve("assert/"),
-      "constants": require.resolve("constants-browserify"),
-      "path": require.resolve("path-browserify"),
-      "process": require.resolve("process/browser"),
-      "stream": require.resolve("stream-browserify"),
-      "util": require.resolve("util/")
-    }
-  },
   entry: './src/index.js',
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+  },
+  resolve: {
+    fallback: {
+      "path": require.resolve("path-browserify"),
+      "stream": require.resolve("stream-browserify"),
+      "constants": require.resolve("constants-browserify"),
+      "fs": false,
+      "child_process": false,
+      "http": false,
+      "https": false,
+      "os": false,
+      "url": false,
+      "zlib": false,
+      "buffer": false,
+      "process": false,
+      "net": false,
+      "readline": false,
+    },
   },
   module: {
     rules: [
@@ -22,17 +30,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
-        }
+          loader: 'babel-loader',
+        },
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader']
-      }
-    ]
+    ],
   },
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  }
 };
